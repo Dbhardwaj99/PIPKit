@@ -36,7 +36,7 @@ public struct PIPCorner {
         self.curve = curve
     }
     
-    func apply(view: UIView) {
+    public func apply(view: UIView) {
         view.clipsToBounds = radius > .zero
         view.layer.cornerRadius = radius
         
@@ -122,7 +122,7 @@ public final class PIPKit {
     }
     
     // MARK: - Internal
-    class func startPIPMode() {
+    public class func startPIPMode() {
         guard let rootViewController = rootViewController else {
             return
         }
@@ -132,7 +132,7 @@ public final class PIPKit {
         rootViewController.pipEventDispatcher?.enterPIP()
     }
     
-    class func stopPIPMode() {
+    public class func stopPIPMode() {
         guard let rootViewController = rootViewController else {
             return
         }
@@ -143,7 +143,7 @@ public final class PIPKit {
     }
     
     // MARK: - Private
-    private static func reset() {
+    public static func reset() {
         PIPKit.state = .none
         PIPKit.pipWindow = nil
         PIPKit.rootViewController = nil
